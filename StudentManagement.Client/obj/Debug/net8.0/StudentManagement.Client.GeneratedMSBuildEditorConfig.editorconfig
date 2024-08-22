@@ -30,6 +30,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Countries/AddCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRyaWVzXEFkZENvdW50cnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Countries/CountriesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRyaWVzXENvdW50cmllc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Countries/DeleteCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRyaWVzXERlbGV0ZUNvdW50cnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Countries/EditCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRyaWVzXEVkaXRDb3VudHJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/AddStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcQWRkU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

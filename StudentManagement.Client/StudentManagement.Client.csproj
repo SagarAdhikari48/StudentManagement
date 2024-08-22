@@ -21,8 +21,4 @@
       <ProjectReference Include="..\StudentManagement_Shared\StudentManagement_Shared.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages\Pages\Countries\" />
-    </ItemGroup>
-
 </Project>

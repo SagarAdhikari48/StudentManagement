@@ -195,3 +195,4 @@ D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\refint\StudentManag
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.pdb
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.genruntimeconfig.cache
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\ref\StudentManagement.dll
+D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.sourcelink.json

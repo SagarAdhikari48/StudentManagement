@@ -1045,3 +1045,4 @@ D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManag
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\refint\StudentManagement.Client.dll
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.pdb
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\ref\StudentManagement.Client.dll
+D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.sourcelink.json

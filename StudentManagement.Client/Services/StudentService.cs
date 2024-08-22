@@ -39,7 +39,7 @@ public class StudentService: IStudentRepository
 
     public async Task<Student> DeleteStudentAsync(int studentId)
     {
-        var student = await _httpClient.DeleteAsync(studentId.ToString());
+        var student = await _httpClient.DeleteAsync($"/api/Student/{studentId}");
         var response = await student.Content.ReadFromJsonAsync<Student>();
         return response;
     }

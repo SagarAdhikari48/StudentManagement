@@ -43,7 +43,7 @@ public class StudentController : ControllerBase
     return Ok(updatedStudent);
   }
 
-  [HttpDelete("Delete-Student")]
+  [HttpDelete("Delete-Student/{id}")]
   public async Task<ActionResult<Student>> DeleteStudentAsync(int id)
   {
     var deletedStudent = await _studentRepository.DeleteStudentAsync(id);
