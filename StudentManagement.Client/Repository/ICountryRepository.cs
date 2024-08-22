@@ -2,7 +2,7 @@
 
 namespace StudentManagement.Client.Repository;
 
-public class ICountryRepository
+public interface ICountryRepository
 {
     Task<Country> AddCountryAsync(Country country);
     
