@@ -1,0 +1,11 @@
+D:\Work\StudentManagement\StudentManagement_Shared\bin\Debug\net8.0\StudentManagement_Shared.deps.json
+D:\Work\StudentManagement\StudentManagement_Shared\bin\Debug\net8.0\StudentManagement_Shared.dll
+D:\Work\StudentManagement\StudentManagement_Shared\bin\Debug\net8.0\StudentManagement_Shared.pdb
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.AssemblyInfoInputs.cache
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.AssemblyInfo.cs
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.csproj.CoreCompileInputs.cache
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.dll
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\refint\StudentManagement_Shared.dll
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.pdb
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\ref\StudentManagement_Shared.dll
