@@ -627,6 +627,7 @@ D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManag
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.AssemblyInfo.cs
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.csproj.CoreCompileInputs.cache
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.MvcApplicationPartsAssemblyInfo.cache
+D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.sourcelink.json
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Authorization.wasm
@@ -1045,4 +1046,3 @@ D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManag
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\refint\StudentManagement.Client.dll
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.pdb
 D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\ref\StudentManagement.Client.dll
-D:\Work\StudentManagement\StudentManagement.Client\obj\Debug\net8.0\StudentManagement.Client.sourcelink.json

@@ -5,8 +5,8 @@ D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManag
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.AssemblyInfoInputs.cache
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.AssemblyInfo.cs
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.csproj.CoreCompileInputs.cache
+D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.sourcelink.json
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.dll
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\refint\StudentManagement_Shared.dll
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.pdb
 D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\ref\StudentManagement_Shared.dll
-D:\Work\StudentManagement\StudentManagement_Shared\obj\Debug\net8.0\StudentManagement_Shared.sourcelink.json

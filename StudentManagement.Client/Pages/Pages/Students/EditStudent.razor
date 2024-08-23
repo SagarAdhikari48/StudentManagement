@@ -1,10 +1,8 @@
 ﻿@page "/student/edit/{id:int}"
-@using Microsoft.AspNetCore.Authorization
 @using StudentManagement_Shared.Models
-@using StudentManagement.Client.Repository
 @rendermode InteractiveServer
 @inject NavigationManager navigation;
-@inject IStudentRepository StudentService
+@* @inject IStudentRepository StudentService *@
 <h3>Update Student Details</h3>
 <hr/>
 <div class="row">

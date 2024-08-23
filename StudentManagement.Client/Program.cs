@@ -17,6 +17,8 @@ builder.Services.AddSingleton<AuthenticationStateProvider, PersistentAuthenticat
 
 builder.Services.AddScoped<IStudentRepository, StudentService>();
 builder.Services.AddScoped<ICountryRepository, CountryService>();
+builder.Services.AddScoped<ISystemCodeRepository, SystemCodeService>();
+builder.Services.AddScoped<ISystemCodeDetailRepository, SystemCodeDetailService>();
 // builder.Services.AddScoped<StudentService>();
 
 await builder.Build().RunAsync();

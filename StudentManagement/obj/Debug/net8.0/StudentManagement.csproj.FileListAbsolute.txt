@@ -178,6 +178,7 @@ D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.A
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.AssemblyInfo.cs
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.csproj.CoreCompileInputs.cache
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.MvcApplicationPartsAssemblyInfo.cache
+D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.sourcelink.json
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\staticwebassets.build.json
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\staticwebassets.development.json
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\staticwebassets\msbuild.StudentManagement.Microsoft.AspNetCore.StaticWebAssets.props
@@ -195,4 +196,3 @@ D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\refint\StudentManag
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.pdb
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.genruntimeconfig.cache
 D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\ref\StudentManagement.dll
-D:\Work\StudentManagement\StudentManagement\obj\Debug\net8.0\StudentManagement.sourcelink.json

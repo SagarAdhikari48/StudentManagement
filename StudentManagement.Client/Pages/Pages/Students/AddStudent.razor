@@ -56,7 +56,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Student Country</label>
-                            <InputText for="Country" class="form-control" @bind-Value="@studobj.Country"></InputText>
+                            <InputSelect for="Country" class="form-control" @bind-Value="@studobj.Country">
+                                <option value="">Select Country</option>
+                                @foreach (var country in Countries)
+                                {
+                                    <option value="@country.Name">@country.Name</option>
+                                }
+                            </InputSelect>
                             <ValidationMessage For="() => studobj.Country"/>
                         </div>
                     </div>
@@ -75,6 +81,13 @@
 @code {
     [SupplyParameterFromForm]
     public Student studobj { get; set; } = new();
+
+    List<Country> Countries = new List<Country>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Countries = await CountryService.GetAllCountriesAsync();
+    }
 
     protected async Task CreateStudent()
     {
