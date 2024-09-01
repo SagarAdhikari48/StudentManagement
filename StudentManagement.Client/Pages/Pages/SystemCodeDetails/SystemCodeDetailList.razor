@@ -1,6 +1,7 @@
 ﻿@page "/system-code-detail-list"
 @using StudentManagement_Shared.Models
-@rendermode InteractiveAuto
+@rendermode InteractiveServer
+@inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -37,7 +38,7 @@
                                         <td>@systemCode.Id</td>
                                         <td>@systemCode.Code</td>
                                         <td>@systemCode.Description</td>
-                                        <td>@systemCode?.SystemCode?.Description</td>
+                                        <td>@systemCode?.SystemCode?.Id</td>
                                         <td>
                                             <a class="btn btn-success" href="/add-system-code-detail"> Edit </a>
                                         </td>
@@ -71,7 +72,7 @@
     }
     public async Task LoadAllSystemCodesDetails()
     {
-        var systemcodes = await SystemCodeDetailService.GetAllSystemCodeDetailsAsync();
+        var systemcodes = await SystemCodeDetailService.GetAllAsync();
 
         if (systemcodes is null) return;
 

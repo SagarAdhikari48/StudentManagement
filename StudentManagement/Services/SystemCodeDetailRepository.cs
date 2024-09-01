@@ -8,43 +8,68 @@ namespace StudentManagement.Services;
 public class SystemCodeDetailRepository : ISystemCodeDetailRepository
 {
     private readonly ApplicationDbContext _context;
-    
+
     public SystemCodeDetailRepository(ApplicationDbContext context)
     {
         this._context = context;
     }
-    public async Task<List<SystemCodeDetail>> GetAllSystemCodeDetailsAsync()
-    {
-        var systemCodeDetails = await _context.SystemCodeDetails.ToListAsync();
-        return systemCodeDetails;
-    }
 
-    public async Task<SystemCodeDetail> GetSystemCodeDetailByIdAsync(int id)
+    public async Task<SystemCodeDetail> AddAsync(SystemCodeDetail mod)
     {
-        var systemCodeDetail = await _context.SystemCodeDetails.Where(s => s.Id == id).FirstOrDefaultAsync();
-        return systemCodeDetail;
-    }
+        if (mod == null) return null;
 
-    public async Task<SystemCodeDetail> AddSystemCodeDetailAsync(SystemCodeDetail systemCodeDetail)
-    {
-        var newSystemCodeDetail = _context.SystemCodeDetails.Add(systemCodeDetail).Entity;
+        var data = _context.SystemCodeDetails.Add(mod).Entity;
         await _context.SaveChangesAsync();
-        return newSystemCodeDetail;
+
+        return data;
     }
 
-    public async Task<SystemCodeDetail> UpdateSystemCodeDetailAsync(SystemCodeDetail systemCodeDetail)
+
+    public async Task<SystemCodeDetail> DeleteAsync(int id)
     {
-        var updatedSystemCodeDetails = _context.SystemCodeDetails.Update(systemCodeDetail).Entity;
+        var data = await _context.SystemCodeDetails.Where(x => x.Id == id).FirstOrDefaultAsync();
+        if (data == null) return null;
+
+        _context.SystemCodeDetails.Remove(data);
         await _context.SaveChangesAsync();
-        return updatedSystemCodeDetails;
+
+        return data;
     }
 
-    public async Task<SystemCodeDetail> DeleteSystemCodeDetailAsync(int id)
+    public async Task<List<SystemCodeDetail>> GetAllAsync()
     {
-        var deletedSystemCodeDetails = await _context.SystemCodeDetails.Where(s => s.Id == id).FirstOrDefaultAsync();
-        _context.SystemCodeDetails.Remove(deletedSystemCodeDetails);
-        await _context.SaveChangesAsync();
-        return deletedSystemCodeDetails;
+        var data = await _context.SystemCodeDetails
+            .Include(x=>x.SystemCode)
+            .ToListAsync();
 
+        return data;
+    }
+
+    public async Task<SystemCodeDetail> GetByIdAsync(int id)
+    {
+        var data = await _context.SystemCodeDetails.Where(x => x.Id == id).FirstOrDefaultAsync();
+        if (data == null) return null;
+
+        return data;
+    }
+
+    public async Task<List<SystemCodeDetail>> GetByCodeAsync(string code)
+    {
+        var data = await _context.SystemCodeDetails.Include(x=>x.SystemCode)
+            .Where(x => x.SystemCode.Description == code)
+            .ToListAsync();
+        if (data == null) return null;
+
+        return data;
+    }
+
+    public async Task<SystemCodeDetail> UpdateAsync(SystemCodeDetail mod)
+    {
+        if (mod == null) return null;
+
+        var data = _context.SystemCodeDetails.Update(mod).Entity;
+        await _context.SaveChangesAsync();
+
+        return data;
     }
 }

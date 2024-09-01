@@ -1,7 +1,8 @@
 ﻿@page "/country/edit/{id:int}"
 @using StudentManagement_Shared.Models
-@rendermode InteractiveAuto
+@rendermode InteractiveServer
 @inject NavigationManager navigation
+@inject ICountryRepository CountryService
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -46,6 +47,9 @@
     
     [Parameter]
     public int id { get; set; }
+    
+    [Inject]
+    public IParentRepository ParentRepository { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

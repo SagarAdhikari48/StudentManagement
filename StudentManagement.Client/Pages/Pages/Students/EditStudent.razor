@@ -1,100 +1,122 @@
 ﻿@page "/student/edit/{id:int}"
 @using StudentManagement_Shared.Models
-@rendermode InteractiveServer
+@rendermode InteractiveAuto
 @inject NavigationManager navigation;
-@* @inject IStudentRepository StudentService *@
+@inject IStudentRepository StudentService
+@inject ICountryRepository CountryService
+@inject ISystemCodeDetailRepository SystemCodeDetailService
+
 <h3>Update Student Details</h3>
 <hr/>
 <div class="row">
     <div class="col-md-12">
-        <EditForm Model="studobj" OnInvalidSubmit="UpdateStudent" FormName="updateStudent">
-            <DataAnnotationsValidator/>
-            <ValidationSummary/>
+        <EditForm Model="studobj" OnValidSubmit="UpdateStudent">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">First Name</label>
-                            <InputText for="FirstName" class="form-control" @bind-Value="@studobj.FirstName"></InputText>
-                            <ValidationMessage For="() => studobj.FirstName"/>
+                            <InputText class="form-control" @bind-Value="@studobj.FirstName"></InputText>
+                            <ValidationMessage For="() => studobj.FirstName" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Middle Name</label>
-                            <InputText for="MiddleName" class="form-control" @bind-Value="@studobj.MiddleName"></InputText>
-                            <ValidationMessage For="() => studobj.MiddleName"/>
+                            <InputText class="form-control" @bind-Value="@studobj.MiddleName"></InputText>
+                            <ValidationMessage For="() => studobj.MiddleName" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Last Name</label>
-                            <InputText for="LastName" class="form-control" @bind-Value="@studobj.LastName"></InputText>
-                            <ValidationMessage For="() => studobj.LastName"/>
+                            <InputText class="form-control" @bind-Value="@studobj.LastName"></InputText>
+                            <ValidationMessage For="() => studobj.LastName" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Email Address</label>
-                            <InputText for="EmailAddress" class="form-control" @bind-Value="@studobj.EmailAddress"></InputText>
-                            <ValidationMessage For="() => studobj.EmailAddress"/>
+                            <InputText class="form-control" @bind-Value="@studobj.EmailAddress"></InputText>
+                            <ValidationMessage For="() => studobj.EmailAddress" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Student Address</label>
-                            <InputText for="Address" class="form-control" @bind-Value="@studobj.Address"></InputText>
-                            <ValidationMessage For="() => studobj.Address"/>
+                            <InputText class="form-control" @bind-Value="@studobj.Address"></InputText>
+                            <ValidationMessage For="() => studobj.Address" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Phone Number</label>
-                            <InputText for="PhoneNumber" class="form-control" @bind-Value="@studobj.PhoneNumber"></InputText>
-                            <ValidationMessage For="() => studobj.PhoneNumber"/>
+                            <InputText class="form-control" @bind-Value="@studobj.PhoneNumber"></InputText>
+                            <ValidationMessage For="() => studobj.PhoneNumber" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Student Country</label>
-                            <InputText for="Country" class="form-control" @bind-Value="@studobj.Country"></InputText>
-                            <ValidationMessage For="() => studobj.Country"/>
+                            <InputText class="form-control" @bind-Value="@studobj.Country.Name"></InputText>
+                            <ValidationMessage For="() => studobj.Country.Name" />
                         </div>
                     </div>
                     <div class="form-group mt-4">
-                        <button type="submit" class="btn btn-primary" @onclick="UpdateStudent">Update Student</button>
-                        <button type="submit" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                        <button type="submit" class="btn btn-primary">Update Student</button>
+                        <button type="button" @onclick="Cancel" class="btn btn-danger">Back to List</button>
                     </div>
                 </div>
-
             </div>
-
         </EditForm>
     </div>
 </div>
 
 @code {
-    [SupplyParameterFromForm]
-    public Student studobj { get; set; } = new();
     [Parameter]
     public int id { get; set; }
+    
+    public Student studobj { get; set; } = new Student
+    {
+        Country = new Country() // Initialize nested objects
+    };
+
+    List<Country> Countries = new List<Country>();
+    List<SystemCodeDetail> Gender = new List<SystemCodeDetail>();
 
     protected override async Task OnInitializedAsync()
     {
+        // Ensure all asynchronous loading is awaited properly
         await LoadStudent();
+        Countries = await CountryService.GetAllCountriesAsync();
+        Gender = await SystemCodeDetailService.GetByCodeAsync("Gender");
     }
-    
+
     public async Task LoadStudent()
     {
         studobj = await StudentService.GetStudentByIdAsync(id);
+        
+        // Check if studobj is null
+        if (studobj == null)
+        {
+            throw new Exception("Student not found");
+        }
+
+        // Ensure studobj.Country is initialized
+        if (studobj.Country == null)
+        {
+            studobj.Country = new Country();
+        }
     }
-    
+
     protected async Task UpdateStudent()
     {
-        var result = await StudentService.UpdateStudentAsync(studobj);
+        await StudentService.UpdateStudentAsync(studobj);
         navigation.NavigateTo("/students-list");
     }
-    
+
     public void Cancel()
     {
         navigation.NavigateTo("/students-list");

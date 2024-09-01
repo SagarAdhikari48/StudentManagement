@@ -1,7 +1,8 @@
 ﻿@page "/edit-system-code/edit/{id:int}"
 @using StudentManagement_Shared.Models
 @inject NavigationManager navigation
-@rendermode InteractiveAuto
+@rendermode InteractiveServer
+@inject IJSRuntime JsRuntime
 
 <div class="row">
     <div class="col-12">

@@ -23,4 +23,8 @@
         <ProjectReference Include="..\StudentManagement_Shared\StudentManagement_Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Data\Migrations\" />
+    </ItemGroup>
+
 </Project>

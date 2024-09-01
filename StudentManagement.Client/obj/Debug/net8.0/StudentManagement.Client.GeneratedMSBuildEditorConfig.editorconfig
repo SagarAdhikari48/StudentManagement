@@ -46,6 +46,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRyaWVzXEVkaXRDb3VudHJ5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Parents/AddParent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcUGFyZW50c1xBZGRQYXJlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Parents/EditParent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcUGFyZW50c1xFZGl0UGFyZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Parents/ParentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcUGFyZW50c1xQYXJlbnRMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/AddStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcQWRkU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

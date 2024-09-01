@@ -1,6 +1,8 @@
 ﻿@page "/add-system-code-detail"
 @using StudentManagement_Shared.Models
+@rendermode InteractiveServer
 @inject NavigationManager navigation
+@inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -71,7 +73,7 @@
 
     public async Task CreateSystemCodeDetail()
     {
-        var newSystemCodeDetail = await SystemCodeDetailService.AddSystemCodeDetailAsync(systemcodeDetailobj);
+        var newSystemCodeDetail = await SystemCodeDetailService.AddAsync(systemcodeDetailobj);
         navigation.NavigateTo("/system-code-detail-list");
     }
 
