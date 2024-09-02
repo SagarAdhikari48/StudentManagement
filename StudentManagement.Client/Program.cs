@@ -1,24 +1,24 @@
-using StudentManagement.Client;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-
+using StudentManagement.Client;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-
-builder.Services.AddScoped(sp => new HttpClient
-{
-    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
-});
 
 builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddSingleton<AuthenticationStateProvider, PersistentAuthenticationStateProvider>();
 
-// builder.Services.AddScoped<IStudentRepository, StudentService>();
-// builder.Services.AddScoped<ICountryRepository, CountryService>();
-// builder.Services.AddScoped<ISystemCodeRepository, SystemCodeService>();
-// builder.Services.AddScoped<ISystemCodeDetailRepository>();
-// builder.Services.AddScoped<IParentRepository>();
-// builder.Services.AddScoped<StudentService>();
+
+
+builder.Services.AddScoped(http => new HttpClient
+{
+    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+});
+
+// builder.Services.Configure<CookiePolicyOptions>(options =>
+// {
+//     options.MinimumSameSitePolicy = SameSiteMode.None;
+//     options.Secure = CookieSecurePolicy.Always;
+// });
 
 await builder.Build().RunAsync();

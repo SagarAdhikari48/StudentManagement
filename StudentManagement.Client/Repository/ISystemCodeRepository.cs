@@ -1,12 +1,17 @@
 ﻿using StudentManagement_Shared.Models;
 
-namespace StudentManagement.Client.Repository;
-
-public interface ISystemCodeRepository
+namespace StudentManagement.Client.Repository
 {
-    public Task<List<SystemCode>> GetAllSystemCodeAsync();
-    public Task<SystemCode> GetSystemCodeByIdAsync(int id);
-    public Task<SystemCode> AddSystemCodeDetailAsync(SystemCode systemCode);
-    public Task<SystemCode> UpdateSystemCodeAsync(SystemCode systemCode);
-    public Task<SystemCode> DeleteSystemCodeDetailAsync(int id);
+    public interface ISystemCodeRepository
+    {
+        Task<SystemCode> AddAsync(SystemCode mod);
+
+        Task<SystemCode> UpdateAsync(SystemCode mod);
+
+        Task<SystemCode> DeleteAsync(int id);
+
+        Task<List<SystemCode>> GetAllAsync();
+
+        Task<SystemCode> GetByIdAsync(int id);
+    }
 }

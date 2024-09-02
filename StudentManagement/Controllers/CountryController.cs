@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement_Shared.Models;
-using StudentManagement.Client.Repository;
+using StudentsManagement.Client.Repository;
 
 namespace StudentManagement.Controllers;
 [Route("api/[controller]")]
@@ -17,35 +17,35 @@ public class CountryController : ControllerBase
     [HttpGet("Countries")]
     public async Task<ActionResult<List<Country>>> GetAllCountriesAsync()
     {
-        var countries = await _countryRepository.GetAllCountriesAsync();
+        var countries = await _countryRepository.GetAllAsync();
         return Ok(countries);
     }
 
     [HttpGet("country/{id}")]
     public async Task<ActionResult<Country>> GetCountryById(int id)
     {
-        var country = await _countryRepository.GetCountryByIdAsync(id);
+        var country = await _countryRepository.GetByIdAsync(id);
         return Ok(country);
     }
 
     [HttpPost("Add-Country")]
     public async Task<ActionResult<Country>> AddNewCountry(Country country)
     {
-        var newCountry = await _countryRepository.AddCountryAsync(country);
+        var newCountry = await _countryRepository.AddAsync(country);
         return Ok(newCountry);
     }
 
     [HttpPost("Update-Country")]
     public async Task<ActionResult<Country>> UpdateCountry(Country country)
     {
-        var updatedCountry = await _countryRepository.UpdateCountryAsync(country);
+        var updatedCountry = await _countryRepository.UpdateAsync(country);
         return updatedCountry;
     }
 
     [HttpDelete("Delete-Country/{id}")]
     public async Task<ActionResult<Country>> DeleteCountry(int id)
     {
-        var deletedCountry = await _countryRepository.DeleteCountryAsync(id);
+        var deletedCountry = await _countryRepository.DeleteAsync(id);
         return Ok(deletedCountry);
     }
 }

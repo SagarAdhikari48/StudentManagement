@@ -1,7 +1,7 @@
 ﻿@page "/add-country"
 @using StudentManagement_Shared.Models
-@rendermode InteractiveAuto
-@inject NavigationManager navigation
+@inject NavigationManager navigation;
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -39,22 +39,17 @@
         </div>
     </div>
 </div>
-
 @code {
     [SupplyParameterFromForm]
     public Country countryobj { get; set; } = new();
 
     protected async Task CreateCountry()
     {
-        var result = await CountryService.AddCountryAsync(countryobj);
-        Console.WriteLine("Result",result);
-        navigation.NavigateTo("/countries");
+        var result = CountryService.AddAsync(countryobj);
+        navigation.NavigateTo("/countries-list");
     }
-
     public void Cancel()
     {
-        navigation.NavigateTo("/countries");
+        navigation.NavigateTo("/countries-list");
     }
-    
-
 }

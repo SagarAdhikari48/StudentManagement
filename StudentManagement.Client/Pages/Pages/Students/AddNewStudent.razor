@@ -1,8 +1,6 @@
 ﻿@page "/add-student"
 @using StudentManagement_Shared.Models
 @inject NavigationManager navigation;
-@rendermode InteractiveServer
-@inject IParentRepository ParentService
 
 
 <h3>Add New Student</h3>
@@ -122,13 +120,14 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Countries = await CountryService.GetAllCountriesAsync();
+        Countries = await CountryService.GetAllAsync();
         Gender = await SystemCodeDetailService.GetByCodeAsync("Gender");
     }
 
     protected async Task CreateStudent()
     {
         var result = await StudentService.AddStudentAsync(studobj);
+      
         navigation.NavigateTo("/students-list");
     }
     public void Cancel()

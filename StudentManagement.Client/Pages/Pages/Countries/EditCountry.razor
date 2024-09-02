@@ -1,16 +1,17 @@
 ﻿@page "/country/edit/{id:int}"
 @using StudentManagement_Shared.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
 @rendermode InteractiveServer
-@inject NavigationManager navigation
-@inject ICountryRepository CountryService
+
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Update Country</h3>
+                <h3 class="card-title">Update Country Details</h3>
             </div>
             <div class="card-body">
-                <EditForm Model="countryobj" OnValidSubmit="UpdateCountry" FormName="addCountry">
+                <EditForm Model="countryobj" OnValidSubmit="UpdateCountry" FormName="updateCountry">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="col-md-12">
@@ -40,38 +41,32 @@
         </div>
     </div>
 </div>
-
 @code {
     [SupplyParameterFromForm]
     public Country countryobj { get; set; } = new();
-    
+
     [Parameter]
     public int id { get; set; }
-    
-    [Inject]
-    public IParentRepository ParentRepository { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadCountryAsync();
+        await LoadCountry();
+    }
+    
+    public async Task LoadCountry()
+    {
+        countryobj = await CountryService.GetByIdAsync(id);
     }
 
-    public async Task LoadCountryAsync()
-    {
-        countryobj = await CountryService.GetCountryByIdAsync(id);
-    }
 
     protected async Task UpdateCountry()
     {
-        var result = await CountryService.UpdateCountryAsync(countryobj);
-        Console.WriteLine("Result",result);
-        navigation.NavigateTo("/countries");
-    }
-
-    public void Cancel()
-    {
-        navigation.NavigateTo("/countries");
+        var result = CountryService.UpdateAsync(countryobj);
+        navigation.NavigateTo("/countries-list");
     }
     
-
+    public void Cancel()
+    {
+        navigation.NavigateTo("/countries-list");
+    }
 }

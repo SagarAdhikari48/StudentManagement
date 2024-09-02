@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentManagement_Shared.Models;
-using StudentManagement.Client.Repository;
 using StudentManagement.Data;
+using StudentsManagement.Client.Repository;
 
 namespace StudentManagement.Services;
 
@@ -14,39 +14,49 @@ public class CountryRepository : ICountryRepository
         this._context = context;
     }
     
-    public async Task<Country> AddCountryAsync(Country country)
+    public async Task<Country> AddAsync(Country mod)
     {
+        if (mod == null) return null;
+
+        var newcountry = _context.Countries.Add(mod).Entity;
+        await _context.SaveChangesAsync();
+
+        return newcountry;
+    }
+
+    public async Task<Country> DeleteAsync(int id)
+    {
+        var country = await _context.Countries.Where(x => x.Id == id).FirstOrDefaultAsync();
         if (country == null) return null;
-        var newCountry = _context.Countries.Add(country).Entity;
+
+        _context.Countries.Remove(country);
         await _context.SaveChangesAsync();
-        return newCountry;
+
+        return country;
     }
 
-    public async Task<Country> UpdateCountryAsync(Country country)
-    {
-        var updatedCountry = _context.Countries.Update(country).Entity;
-        await _context.SaveChangesAsync();
-        return updatedCountry;
-    }
-
-    public async Task<Country> DeleteCountryAsync(int countryId)
-    {
-        var deletedCountry = await _context.Countries.Where(c => c.Id == countryId).FirstOrDefaultAsync();
-        if (deletedCountry == null) return null;
-        _context.Countries.Remove(deletedCountry);
-        await _context.SaveChangesAsync();
-        return deletedCountry;
-    }
-
-    public async Task<List<Country>> GetAllCountriesAsync()
+    public async Task<List<Country>> GetAllAsync()
     {
         var countries = await _context.Countries.ToListAsync();
+
         return countries;
     }
 
-    public async Task<Country> GetCountryByIdAsync(int countryId)
+    public async Task<Country> GetByIdAsync(int id)
     {
-        var country = await _context.Countries.Where(c => c.Id == countryId).FirstOrDefaultAsync();
-        return country;
+        var singlecountry = await _context.Countries.Where(x => x.Id == id).FirstOrDefaultAsync();
+        if (singlecountry == null) return null;
+
+        return singlecountry;
+    }
+
+    public async Task<Country> UpdateAsync(Country mod)
+    {
+        if (mod == null) return null;
+
+        var updatedcountry = _context.Countries.Update(mod).Entity;
+        await _context.SaveChangesAsync();
+
+        return updatedcountry;
     }
 }

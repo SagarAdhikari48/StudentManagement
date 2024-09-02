@@ -1,17 +1,17 @@
 ﻿using StudentManagement_Shared.Models;
 
-namespace StudentManagement.Client.Repository;
-
-public interface ICountryRepository
+namespace StudentsManagement.Client.Repository
 {
-    Task<Country> AddCountryAsync(Country country);
-    
-    Task<Country> UpdateCountryAsync(Country country);
+    public interface ICountryRepository
+    {
+        Task<Country> AddAsync(Country mod);
 
-    Task<Country> DeleteCountryAsync(int countryId);
+        Task<Country> UpdateAsync(Country mod);
 
-    Task<List<Country>> GetAllCountriesAsync();
+        Task<Country> DeleteAsync(int id);
 
-    Task<Country> GetCountryByIdAsync(int countryId);
-    
+        Task<List<Country>> GetAllAsync();
+
+        Task<Country> GetByIdAsync(int id);
+    }
 }

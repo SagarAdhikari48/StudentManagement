@@ -11,6 +11,9 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Country> Countries { get; set; }
     public DbSet<SystemCode> SystemCodes { get; set; }
     public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
-    
     public DbSet<Parent> Parents { get; set; }
+
+    public DbSet<Subject> Subjects { get; set; }    
+    public DbSet<Teacher> Teachers { get; set; }
+
 }

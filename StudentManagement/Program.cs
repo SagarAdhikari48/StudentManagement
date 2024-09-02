@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Client.Pages;
 using StudentManagement.Client.Repository;
 using StudentManagement.Components;
 using StudentManagement.Components.Account;
 using StudentManagement.Data;
 using StudentManagement.Services;
+using StudentsManagement.Client.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,12 +44,13 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-
-builder.Services.AddScoped<IStudentRepository,StudentRepository> ();
-builder.Services.AddScoped<ICountryRepository, CountryRepository>();
-builder.Services.AddScoped<ISystemCodeRepository, SystemCodeRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ICountryRepository,CountryRepository>();
 builder.Services.AddScoped<ISystemCodeDetailRepository, SystemCodeDetailRepository>();
+builder.Services.AddScoped<ISystemCodeRepository, SystemCodeRepository>();
 builder.Services.AddScoped<IParentRepository, ParentRepository>();
+builder.Services.AddScoped<ITeacherRepository,TeacherRepository>();
+builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
 
 
 var app = builder.Build();

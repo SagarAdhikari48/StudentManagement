@@ -1,11 +1,7 @@
 ﻿@page "/student/delete/{id:int}"
 @using StudentManagement_Shared.Models
-@using StudentManagement.Client.Repository
-@rendermode InteractiveServer
 @inject NavigationManager navigation;
-@inject IStudentRepository StudentService
-<h3>Delete Student Details</h3>
-<hr/>
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -42,13 +38,13 @@
                             </tr>
                             <tr>
                                 <th>Country</th>
-                                <td>@studobj.Country</td>
+                                <td>@studobj.CountryId</td>
                             </tr>
                         </table>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" @onclick="Delete"> Delete Student</button>
-                        <button type="button" class="btn btn-danger" @onclick="Cancel">Cancel</button>
+                        <button type="button" class="btn btn-danger">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -56,27 +52,28 @@
     </div>
 </div>
 @code {
-    [SupplyParameterFromForm]
+
     public Student studobj { get; set; } = new();
+
     [Parameter]
     public int id { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
         await LoadStudent();
     }
-    
     public async Task LoadStudent()
     {
         studobj = await StudentService.GetStudentByIdAsync(id);
     }
-    
+
+
     protected async Task Delete()
     {
         var result = await StudentService.DeleteStudentAsync(id);
         navigation.NavigateTo("/students-list");
     }
-    
     public void Cancel()
     {
         navigation.NavigateTo("/students-list");

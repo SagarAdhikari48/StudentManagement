@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement_Shared.Models;
 using StudentManagement.Client.Repository;
+using StudentsManagement.Client.Repository;
 
 namespace StudentManagement.Controllers;
 [Route("api/[controller]")]

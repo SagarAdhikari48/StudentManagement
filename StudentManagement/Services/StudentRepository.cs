@@ -21,10 +21,10 @@ public class StudentRepository : IStudentRepository
         return newstudent;
     }
 
-    public async Task<Student> UpdateStudentAsync(Student student)
+    public async Task<Student> UpdateStudentAsync(Student mod)
     {
-        if (student == null) return null;
-        var newstudent = _context.Students.Update(student).Entity;
+        if (mod == null) return null;
+        var newstudent = _context.Students.Update(mod).Entity;
         await _context.SaveChangesAsync();
         return newstudent;
     }
@@ -41,6 +41,7 @@ public class StudentRepository : IStudentRepository
     public async Task<List<Student>> GetAllStudentsAsync()
     {
         var students = await _context.Students.ToListAsync();
+        if (students == null) return null;
         return students;
     }
 

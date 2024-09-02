@@ -1,8 +1,7 @@
-﻿@page "/add-system-code-detail"
+﻿@page "/add-systemCodeDetail"
 @using StudentManagement_Shared.Models
-@rendermode InteractiveServer
-@inject NavigationManager navigation
-@inject IJSRuntime JsRuntime
+@inject NavigationManager navigation;
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -11,7 +10,7 @@
             </div>
             <div class="card-body">
                 <div class="col-md-12">
-                    <EditForm EditContext="@editContext" Model="systemcodeDetailobj" OnValidSubmit="CreateSystemCodeDetail" FormName="addSystemCodeDetail">
+                    <EditForm Model="systemcodeDetailobj" OnValidSubmit="CreateSystemCodeDetail" FormName="addSystemCodeDetail">
                         <DataAnnotationsValidator />
                         <ValidationSummary />
                         <div class="col-md-12">
@@ -37,7 +36,7 @@
                                             <option value="">Select System Code</option>
                                             @foreach (var systemcode in SystemCodes)
                                             {
-                                            <option value="@systemcode.Id">@systemcode.Description</option>
+                                                <option value="@systemcode.Id">@systemcode.Description</option>
                                             }
                                         </InputSelect>
                                         <ValidationMessage For="()=>systemcodeDetailobj.SystemCodeId" />
@@ -55,31 +54,25 @@
         </div>
     </div>
 </div>
-
 @code {
     [SupplyParameterFromForm]
     public SystemCodeDetail systemcodeDetailobj { get; set; } = new();
 
-    // List<SystemCode> SystemCodes = new List<SystemCode>();
-    private EditContext editContext;
+    List<SystemCode> SystemCodes = new List<SystemCode>();
 
 
-    public List<SystemCode> SystemCodes { get; set; } = new();
-    
     protected override async Task OnInitializedAsync()
     {
-        SystemCodes = await SystemCodeService.GetAllSystemCodeAsync();
+        SystemCodes = await SystemCodeService.GetAllAsync();
     }
 
-    public async Task CreateSystemCodeDetail()
+    protected async Task CreateSystemCodeDetail()
     {
-        var newSystemCodeDetail = await SystemCodeDetailService.AddAsync(systemcodeDetailobj);
-        navigation.NavigateTo("/system-code-detail-list");
+        var result = await SystemCodeDetailService.AddAsync(systemcodeDetailobj);
+        navigation.NavigateTo("/systemcodesdetails-list");
     }
-
     public void Cancel()
     {
-        navigation.NavigateTo("/system-code-detail-list");
+        navigation.NavigateTo("/systemcodesdetails-list");
     }
-    
 }

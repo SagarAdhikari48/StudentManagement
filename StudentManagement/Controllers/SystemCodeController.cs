@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement_Shared.Models;
 using StudentManagement.Client.Repository;
+using StudentsManagement.Client.Repository;
 
 namespace StudentManagement.Controllers;
 [Route("api/[controller]")]
@@ -18,28 +19,28 @@ public class SystemCodeController : ControllerBase
     [HttpGet("All-System-Code")]
     public async Task<ActionResult<List<SystemCode>>> GetAllSystemCodeAsync()
     {
-        var systemCodes = await _systemCodeRepository.GetAllSystemCodeAsync();
+        var systemCodes = await _systemCodeRepository.GetAllAsync();
         return Ok(systemCodes);
     }
 
     [HttpGet("systemCode/{id}")]
     public async Task<ActionResult<SystemCode>> GetSystemCodeByIdAsync(int id)
     {
-        var systemCode = await _systemCodeRepository.GetSystemCodeByIdAsync(id);
+        var systemCode = await _systemCodeRepository.GetByIdAsync(id);
         return Ok(systemCode);
     }
 
     [HttpPost("Add-System-Code")]
     public async Task<ActionResult<SystemCode>> AddSystemCodeAsync(SystemCode systemCode)
     {
-        var newSystemCode = await _systemCodeRepository.AddSystemCodeDetailAsync(systemCode);
+        var newSystemCode = await _systemCodeRepository.AddAsync(systemCode);
         return Ok(newSystemCode);
     }
 
     [HttpPost("Update-System-Code")]
     public async Task<ActionResult<SystemCode>> UpdateSystemCodeAsync(SystemCode systemCode)
     {
-        var updatedSystemCode = await _systemCodeRepository.UpdateSystemCodeAsync(systemCode);
+        var updatedSystemCode = await _systemCodeRepository.UpdateAsync(systemCode);
         return Ok(updatedSystemCode);
 
     }
@@ -47,7 +48,7 @@ public class SystemCodeController : ControllerBase
     [HttpDelete("Delete-System-Code/{id}")]
     public async Task<ActionResult<SystemCode>> DeleteSystemCodeAsync(int id)
     {
-        var deletedSystemCode = await _systemCodeRepository.DeleteSystemCodeDetailAsync(id);
+        var deletedSystemCode = await _systemCodeRepository.DeleteAsync(id);
         return Ok(deletedSystemCode);
     }
 }

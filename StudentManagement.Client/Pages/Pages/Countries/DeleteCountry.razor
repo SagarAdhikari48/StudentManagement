@@ -34,25 +34,30 @@
 </div>
 
 @code {
-    [SupplyParameterFromForm] public Country countryobj { get; set; } = new();
-    
+    public Country countryobj { get; set; } = new();
+
     [Parameter]
     public int id { get; set; }
 
+    public Country country = new Country();
+
     protected override async Task OnInitializedAsync()
     {
-        await LoadCountryAsync();
+        await LoadCountry();
     }
-
-    public async Task LoadCountryAsync()
+    public async Task LoadCountry()
     {
-        countryobj = await CountryService.GetCountryByIdAsync(id);
+        countryobj = await CountryService.GetByIdAsync(id);
     }
 
-    public async Task Delete()
+
+    protected async Task Delete()
     {
-       var result = await CountryService.DeleteCountryAsync(id);
-        navigation.NavigateTo("/countries");
+        var result = await CountryService.DeleteAsync(id);
+        navigation.NavigateTo("/countries-list");
     }
-
+    public void Cancel()
+    {
+        navigation.NavigateTo("/countries-list");
+    }
 }

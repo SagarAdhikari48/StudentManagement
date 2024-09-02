@@ -1,16 +1,18 @@
-﻿using StudentManagement_Shared.Models;
+﻿
+using StudentManagement_Shared.Models;
 
-namespace StudentManagement.Client.Repository;
-
-public interface IStudentRepository
+namespace StudentManagement.Client.Repository
 {
-    Task<Student> AddStudentAsync(Student student);
-    
-    Task<Student> UpdateStudentAsync(Student student);
+    public  interface IStudentRepository
+    {
+        Task<Student> AddStudentAsync(Student student);
 
-    Task<Student> DeleteStudentAsync(int studentId);
+        Task<Student> UpdateStudentAsync(Student mod);
 
-    Task<List<Student>> GetAllStudentsAsync();
+        Task<Student> DeleteStudentAsync(int studentId);
 
-    Task<Student> GetStudentByIdAsync(int studentId);
+        Task<List<Student>> GetAllStudentsAsync();
+
+        Task<Student> GetStudentByIdAsync(int studentId);
+    }
 }

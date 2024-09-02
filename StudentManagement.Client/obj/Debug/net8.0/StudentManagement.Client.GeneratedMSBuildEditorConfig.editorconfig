@@ -22,12 +22,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Work\StudentManagement\StudentManagement.Client
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Auth.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aC5yYXpvcg==
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Auth.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQXV0aC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Countries/AddCountry.razor]
@@ -58,8 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcUGFyZW50c1xQYXJlbnRMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/AddStudent.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcQWRkU3R1ZGVudC5yYXpvcg==
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/AddNewStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcQWRkTmV3U3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/DeleteStudent.razor]
@@ -70,32 +70,56 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcRWRpdFN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/StudentList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcU3R1ZGVudExpc3QucmF6b3I=
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Students/StudentsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3R1ZGVudHNcU3R1ZGVudHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Subjects/AddSubject.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3ViamVjdHNcQWRkU3ViamVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Subjects/EditSubject.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3ViamVjdHNcRWRpdFN1YmplY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Subjects/SubjectsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3ViamVjdHNcU3ViamVjdHNMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodeDetails/AddSystemCodeDetail.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZURldGFpbHNcQWRkU3lzdGVtQ29kZURldGFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodeDetails/SystemCodeDetailList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZURldGFpbHNcU3lzdGVtQ29kZURldGFpbExpc3QucmF6b3I=
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodeDetails/SystemCodesDetailsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZURldGFpbHNcU3lzdGVtQ29kZXNEZXRhaWxzTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/AddSystemCode.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcQWRkU3lzdGVtQ29kZS5yYXpvcg==
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/AddSystemCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcQWRkU3lzdGVtQ29kZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/DeleteSystemCode.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcRGVsZXRlU3lzdGVtQ29kZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/EditSystemCode.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcRWRpdFN5c3RlbUNvZGUucmF6b3I=
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/EditSystemCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcRWRpdFN5c3RlbUNvZGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/SystemCodeList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcU3lzdGVtQ29kZUxpc3QucmF6b3I=
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/SystemCodes/SystemCodesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcU3lzdGVtQ29kZXNcU3lzdGVtQ29kZXNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Teachers/AddTeacher.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcVGVhY2hlcnNcQWRkVGVhY2hlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Teachers/EditTeacher.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcVGVhY2hlcnNcRWRpdFRlYWNoZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Work/StudentManagement/StudentManagement.Client/Pages/Pages/Teachers/TeachersList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcVGVhY2hlcnNcVGVhY2hlcnNMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Work/StudentManagement/StudentManagement.Client/RedirectToLogin.razor]
